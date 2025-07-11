@@ -14,7 +14,7 @@ class ChatController extends Controller
     }
      public function index()
     {
-        return view('user.chat.index');
+        return view('user.chat.chat');
     }
 
     public function broadcast(Request $request)
