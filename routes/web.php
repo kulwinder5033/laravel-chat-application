@@ -20,6 +20,6 @@ Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
    Route::resource('customers',CustomerController::class);
    Route::get('chat',[ChatController::class, 'index'])->name('chat.index');
    Route::post('broadcast', [ChatController::class, 'broadcast'])->name('chat.broadcast');
-   Route::post('recieve', [ChatController::class, 'recieve'])->name('chat.recieve');
+   Route::post('receive', [ChatController::class, 'receive'])->name('chat.receive');
  
 });

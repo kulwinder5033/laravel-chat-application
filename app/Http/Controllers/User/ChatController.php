@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Events\PusherBroadcast;
 use App\Http\Controllers\Controller;
-use App\Models\Chat;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -14,22 +13,14 @@ class ChatController extends Controller
         $this->middleware('auth');
     }
      public function index()
-    { 
-        $chats = Chat::where('sender_id', auth()->id())
-                    ->orWhere('receiver_id', auth()->id())
-                    ->orderBy('created_at', 'desc')
-                    ->get();
-        return view('user.chat.index',compact('chats'));
+    {
+        return view('user.chat.index');
     }
 
     public function broadcast(Request $request)
     {
-        Chat::create([
-            'sender_id' => auth()->id(),
-            'receiver_id' => (auth()->id()==1)?2:1,
-            'message' => $request->get('message'),
-            'is_read' => false,
-        ]);
+        broadcast(new PusherBroadcast($request->get('message')))->toOthers();
+
         return view('user.chat.broadcast', ['message' => $request->get('message')]);
     }
 
