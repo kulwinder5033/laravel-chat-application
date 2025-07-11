@@ -58,7 +58,7 @@
   //Receive messages
   channel.bind('chat', function (data) {
    alert(JSON.stringify(data));
-    $.post("{{ route('user.chat.recieve') }}", {
+    $.post("{{ route('user.chat.receive') }}", {
       _token:  '{{csrf_token()}}',
       message: data.message,
     })
