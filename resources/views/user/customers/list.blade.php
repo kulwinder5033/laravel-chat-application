@@ -60,8 +60,9 @@
                                   <table class="table align-middle table-row-dashed fs-6 gy-5">
                                     <thead>
                                         <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-                                            <th class="min-w-150px">First</th>
-                                            <th class="min-w-150px">Name</th>
+                                            <th class="min-w-150px">Customer ID</th>
+                                            <th class="min-w-150px">First Name</th>
+                                            <th class="min-w-150px">LaSt Name</th>
                                             <th class="min-w-150px">Age</th>
                                             <th class="min-w-150px">Email</th>
                                             <th class="min-w-150px">DOB</th>
@@ -71,17 +72,16 @@
                                     <tbody>
                                         @foreach($customers as $customer)
                                         <tr>
-                                            <td>{{ $customer->name }}</td>
+                                            <td>#{{ $customer->id }}</td>
+                                            <td>{{ $customer->first_name }}</td>
+                                            <td>{{ $customer->last_name }}</td>
+                                            <td>{{ $customer->age }}</td>
                                             <td>{{ $customer->email }}</td>
-                                            <td>{{ $customer->phone }}</td>
-                                            <td>{{ $customer->pan_number }}</td>
-                                            <td>{{ $customer->cause }}</td>
-                                            <td>{{  \Carbon\Carbon::parse($customer->donation_date)->format('d-M-Y') }}</td>
+                                            <td>{{  \Carbon\Carbon::parse($customer->dob)->format('d-M-Y') }}</td>
                                             <td>
-                                                <a href="{{ route('user.customer.show', $customer->id) }}" class="btn btn-sm btn-primary">Download Receipt</a>
-                                                <a href="{{ route('user.customer.edit', $customer->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                                <a href="{{ route('user.customers.edit', $customer->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                                 <a href="javascript:void(0);" onclick="confirmDelete({{ $customer->id }})" class="btn btn-sm btn-danger">Delete</a>
-                                                <form id="delete-form{{$customer->id}}" action="{{ route('user.customer.destroy', $customer->id) }}" method="POST" style="display:inline;">
+                                                <form id="delete-form{{$customer->id}}" action="{{ route('user.customers.destroy', $customer->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

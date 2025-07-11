@@ -25,7 +25,7 @@
                     <!--begin:Menu link-->
                     <a class="menu-link" href="{{ route('user.customers.index') }}">
                         <span class="menu-icon">
-                            <i class="ki-duotone ki-element-11 fs-2">
+                            <i class="ki-duotone ki-element-11 fs-2 ki-users">
                                 <span class="path1"></span>
                                 <span class="path2"></span>
                                 <span class="path3"></span>

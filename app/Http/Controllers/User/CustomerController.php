@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCustomerRequest;
+use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class CustomerController extends Controller
         
         Customer::create($validated_data);
 
-        redirect()->route('user.customers.index')->with('success', 'Customer created successfully.');
+        return redirect()->route('user.customers.index')->with('success', 'Customer created successfully.');
     }
 
     /**
@@ -56,15 +57,20 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $customer = Customer::find($id);
+        return view('user.customers.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCustomerRequest $request, string $id)
     {
-        //
+        $validated_data = $request->validated();
+
+        Customer::where('id', $id)->update($validated_data);
+
+        return redirect()->route('user.customers.index')->with('success', 'Customer updated successfully.');
     }
 
     /**
@@ -72,6 +78,8 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $customer = Customer::find($id);
+        $customer->delete();
+        return redirect()->route('user.customers.index')->with('success', 'Customer deleted successfully.');
     }
 }
