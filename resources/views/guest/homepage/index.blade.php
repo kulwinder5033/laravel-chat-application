@@ -1,0 +1,11 @@
+@extends('layouts.guest')
+@section('banner')
+    @include('guest.homepage.components.banner')
+@endsection
+@section('curve')
+    @include('guest.homepage.components.curve')
+@endsection
+@section('content')
+    @include('guest.homepage.components.fast-service')
+    @include('guest.homepage.components.how-it-works')
+@endsection
