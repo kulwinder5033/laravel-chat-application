@@ -16,7 +16,7 @@
                     <!--begin::Toolbar-->
                     <div class="flex-equal text-end ms-1">
                         <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
-                        <a href="{{ route('register') }}" class="btn btn-secondary">Sign Up</a>
+                        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
                     </div>
                     <!--end::Toolbar-->
                 </div>

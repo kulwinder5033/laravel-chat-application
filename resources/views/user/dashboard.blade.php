@@ -34,12 +34,7 @@
                 <!--end::Page title-->
                 <!--begin::Actions-->
                 <div class="d-flex align-items-center gap-2 gap-lg-3">
-                    <!--begin::Secondary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Rollover</a>
-                    <!--end::Secondary button-->
-                    <!--begin::Primary button-->
-                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">Add Target</a>
-                    <!--end::Primary button-->
+                   
                 </div>
                 <!--end::Actions-->
             </div>
@@ -65,7 +60,7 @@
                                     <!--begin::Amount-->
                                     <!--end::Amount-->
                                     <!--begin::Subtitle-->
-                                    <span class="text-dark opacity-75 pt-1 fw-semibold fs-6">Coming Soon</span>
+                                    <span class="text-dark opacity-75 pt-1 fw-semibold fs-6">Chat Application</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->

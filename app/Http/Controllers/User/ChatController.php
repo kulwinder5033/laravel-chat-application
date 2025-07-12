@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\FollowUp;
 use App\Events\PusherBroadcast;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -14,6 +16,7 @@ class ChatController extends Controller
     }
      public function index()
     {
+        
         return view('user.chat.chat');
     }
 

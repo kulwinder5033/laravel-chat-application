@@ -56,7 +56,7 @@
 
                     <!-- Chat -->
                     <div class="messages">
-                        @include('user.chat.receive', ['message' => "Ask a friend to open this link and you can chat with them!"])
+                        @include('user.chat.receive', ['message' => "Ask a User to open this link and you can chat with them!"])
                     </div>
                     <!-- End Chat -->
 

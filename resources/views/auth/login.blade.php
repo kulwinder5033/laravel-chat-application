@@ -53,15 +53,12 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
+                                <a href="{{ route('auth.login') }}" class="btn btn-danger">
+                                    <i class="fab fa-google"></i> {{ __('Login with Google') }}
+                                </a>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
